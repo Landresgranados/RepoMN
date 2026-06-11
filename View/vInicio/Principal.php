@@ -1,8 +1,8 @@
 <?php
-    include_once "../LayoutInterno.php";
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/RepoMN/View/LayoutInterno.php';
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <?php
@@ -10,10 +10,12 @@
 ?>
 
 <body>
-    <?
+    
+    <?php
         Navbar();
         Sidebar();
-     ?>
+    ?>
+
     <main id="content" class="content py-10">
         <div class="container-fluid">
             <div class="row">
@@ -28,15 +30,14 @@
 
             <?php
                 Footer();
-             ?>
+            ?>
 
-        </div>
         </div>
     </main>
 
     <?php
         ImportJS();
-     ?>
+    ?>
 
 </body>
 
