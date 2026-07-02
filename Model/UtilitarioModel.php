@@ -1,5 +1,9 @@
 <?php
 
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
     function OpenDB()
     {
         mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -11,7 +15,7 @@
         $conn -> close();
     }
 
-    function AddError($error, $accion, $idUsuario)
+    function AddError($error, $accion)
     {
         $conn = OpenDB();
 
