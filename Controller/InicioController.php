@@ -2,6 +2,11 @@
     include_once $_SERVER['DOCUMENT_ROOT'] . '/RepoMN/Controller/UtilitarioController.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/RepoMN/Model/InicioModel.php';
 
+    if(session_status() == PHP_SESSION_NONE)
+    {
+        session_start();
+    }
+
     if(isset($_POST["btnRegistrar"]))
     {
         $identificacion = $_POST["identificacion"];
@@ -29,6 +34,8 @@
 
         if($datos)
         {
+            $_SESSION["NombreUsuario"] = $datos["Nombre"];
+
             header("Location: ../../View/vInicio/Principal.php");
             exit();
         }
