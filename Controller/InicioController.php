@@ -35,6 +35,9 @@
         {
             $_SESSION["NombreUsuario"] = $datos["Nombre"];
             $_SESSION["ConsecutivoUsuario"] = $datos["Consecutivo"];
+            $_SESSION["CorreoElectronicoUsuario"] = $datos["CorreoElectronico"];
+            $_SESSION["ConsecutivoRol"] = $datos["ConsecutivoRol"];
+            $_SESSION["NombreRol"] = $datos["NombreRol"];
 
             header("Location: ../../View/vInicio/Principal.php");
             exit();
@@ -72,8 +75,6 @@
 
     if(isset($_POST["btnSalir"]))        
     {
-        session_destroy();
-        header("Location: ../../View/vInicio/IniciarSesion.php");
-        exit();
+        CerrarSesion();
     }
     

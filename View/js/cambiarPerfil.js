@@ -3,7 +3,7 @@ $(function () {
     $("#nombre").prop("readonly", true);
     $("#nombre").css("background-color", "#d9dde28d");
 
-    $("#formRegistrarUsuarios").validate({
+    $("#formCambiarPerfil").validate({
         rules: {
             identificacion: {
                 required: true
@@ -14,10 +14,6 @@ $(function () {
             correoElectronico: {
                 required: true,
                 email: true
-            },
-            contrasenna: {
-                required: true,
-                minlength: 5
             }
         },
         messages: {
@@ -30,10 +26,6 @@ $(function () {
             correoElectronico: {
                 required: "Campo obligatorio.",
                 email: "Formato no válido."
-            },
-            contrasenna: {
-                required: "Campo obligatorio.",
-                minlength: "Mínimo 5 caracteres."
             }
         },
         errorElement: "div",
@@ -50,3 +42,4 @@ $(function () {
     });
 
 });
+

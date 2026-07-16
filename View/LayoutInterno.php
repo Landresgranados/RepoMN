@@ -32,9 +32,11 @@ function ImportJS()
 function Navbar()
 {
     $nombreUsuario = "";
+    $nombreRol = "";
     if(isset($_SESSION["NombreUsuario"]))
     {
         $nombreUsuario = $_SESSION["NombreUsuario"];
+        $nombreRol = isset($_SESSION["NombreRol"]) ? $_SESSION["NombreRol"] : "";
     }
     else
     {
@@ -60,13 +62,14 @@ function Navbar()
                     <li class="ms-3 dropdown">
                         <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                            <h4 class="mb-0 small">' . $nombreUsuario . '</h4>
+                           <span class="text-muted" style="font-size:0.75rem;">' . $nombreRol . '</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end p-0 mt-3" style="min-width: 200px;">
                             <div>
                             
                                 <div class="p-2 d-flex flex-column gap-0 small">
 
-                                    <a href="#!" class="btn btn-sm text-start py-1 fs-6">
+                                    <a href="../vUsuario/CambiarPerfil.php" class="btn btn-sm text-start py-1 fs-6">
                                         <i class="fa-solid fa-user me-2"></i>
                                         Mi perfil
                                     </a>
@@ -100,13 +103,13 @@ function Sidebar()
     echo '
         <aside id="sidebar" class="sidebar">
         <div class="logo-area">
-            <a href="index.html" class="d-inline-flex">
+            <a href="../vInicio/Principal.php" class="d-inline-flex">
                 <img src="../images/logo-fidelitas.png" alt="" width="100" class="logo-full" />
                 <img src="../images/logo-fidelitas-letra.png" alt="" width="32" class="logo-collapsed" />
             </a>
         </div>
         <ul class="nav flex-column mt-5">
-            <li><a class="nav-link active" href="index.html"><i class="ti ti-home"></i><span
+            <li><a class="nav-link active" href=""><i class="ti ti-home"></i><span
                         class="nav-text">Dashboard</span></a></li>
         </ul>
         </aside>

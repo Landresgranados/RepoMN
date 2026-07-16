@@ -1,4 +1,5 @@
 <?php
+    include_once $_SERVER['DOCUMENT_ROOT'] . '/RepoMN/Controller/UsuarioController.php';
     include_once $_SERVER['DOCUMENT_ROOT'] . '/RepoMN/View/LayoutInterno.php';
 ?>
 
@@ -36,6 +37,15 @@
 
                 <!-- Formulario -->
                 <div class="col-xl-6 col-lg-6 col-md-8">
+
+                    <?php
+                        if(isset($_POST["Mensaje"]))
+                        {
+                            echo '<div class="alert alert-danger text-center">' 
+                                 . $_POST["Mensaje"] . '</div>';
+                        }
+                    ?>
+
                     <div class="card form-card">
                         <div class="card-header">
                             <h5 class="mb-0 text-white fw-semibold">
@@ -69,7 +79,7 @@
 
                                 <div class="d-grid gap-2">
                                     <button type="submit" id="btnCambiarContrasenna" name="btnCambiarContrasenna" class="btn btn-primary">
-                                        <i class="fa-solid fa-floppy-disk me-2"></i>Guardar contraseña
+                                        <i class="fa-solid fa-floppy-disk me-2"></i>Procesar
                                     </button>
                                 </div>
 
